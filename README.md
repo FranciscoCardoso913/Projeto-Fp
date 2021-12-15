@@ -12,22 +12,10 @@
 
 1) Link para o repositório do GitHub: https://github.com/FranciscoCardoso913/Projeto-Fp
 
-2) Adicionar, como colaborador com permissão de leitura (*role read*):
-
-- https://github.com/AfonsoSalgadoSousa
-- https://github.com/jlopes60
-- https://github.com/nmacedo
-- https://github.com/rpmcruz
-- https://github.com/eSoares
-- https://github.com/pbv
-- https://github.com/imdcode
-- https://github.com/acoelho-fe-up-pt
 
 ### Descrição
 
-*---É um jogo de puzzle em que o objetivo do jogo é empurrar caixotes para um sítio indicado. 
-Para empurrar o caixote é preciso ir ao outro lado empurrá-lo. 
-Ou seja, se ele ficar junto à parede, a pessoa precisa de reiniciar o jogo. Estamos a utilizar os níveis do XSokoban.---*
+*--É um jogo onde inicialmente tem que selecionar um de 8 personagens, depois de selecionar o personagem ira lutar num torneio contra os outros personagens, cada personagem tem dois elementos, cada elemento tem pelo menos uma fraqueza e um elemento do qual tem vantagem, cada personagem tem 4 ataques e uma habilidade especial diferente.
 
 ### UI
 
