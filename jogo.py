@@ -664,7 +664,7 @@ def menu_inicial(menu,world,running):
     grey=(125,125,125)
     font = pygame.font.Font('freesansbold.ttf', 120)
     font2= pygame.font.Font('freesansbold.ttf', 60)
-    text = font.render('Tales of Leic', True, white)
+    text = font.render('Turtle Slayer', True, white)
     text2=font2.render('   Play   ', True, white,grey)
     text3=font2.render('   Quit   ', True, white)
     text2Rect=text2.get_rect()
