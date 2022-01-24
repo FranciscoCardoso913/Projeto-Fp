@@ -1,4 +1,4 @@
-# Projeto Pokemon
+# Projeto Turtle slayer
 ## FP/L.EIC, 2021/22
 ## Francisco Cardoso (up202108793)
 ## 1LEIC11
@@ -15,7 +15,7 @@
 
 ### Descrição
 
-*--É um jogo onde inicialmente tem que selecionar um de 8 personagens, depois de selecionar o personagem ira lutar num torneio contra os outros personagens, cada personagem tem dois elementos, cada elemento tem pelo menos uma fraqueza e um elemento do qual tem vantagem, cada personagem tem 4 ataques e uma habilidade especial diferente.
+*--É um jogo onde um personagem tem que se esquivar de inimigos, ao ir contra inimigos iniciara uma luta do estilo pokemons com algumas mecanicas diferentes.
 
 ### UI
 
