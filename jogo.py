@@ -1485,7 +1485,9 @@ def combat(player,inimigo):
                     player["vida"]=0
                     texto_luta(player,inimigo,op,critico,3,acu)            
     inimigo["ativo"]=False  
-    inimigo["x"]=1560           
+    inimigo["x"]=1560  
+    if player["vida"]<=0 :
+        running=False        
     return player,inimigo,running    
 
 while running:  
