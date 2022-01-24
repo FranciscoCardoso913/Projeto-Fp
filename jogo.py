@@ -16,7 +16,7 @@ player={
         "vida":1800,
         "vidaM":1800,
         "img":"vy_0 (2).png",
-        "ataque":300,
+        "ataque":500,
         "velocidade":60,
         "elemento1":"vento",
         "elemento2":"eletro"
@@ -42,7 +42,7 @@ inimigos=[ {
     "vida":2800,
     "vidaM":2800,
     "img":"ini_ini.png",
-    "ataque":82,
+    "ataque":382,
     "velocidade":50,
     "elemento1":"eletro",
     "nome":"Canas",
@@ -60,7 +60,7 @@ inimigos=[ {
     "vida":2800,
     "vidaM":2800,
     "img":"razor.jpg",
-    "ataque":800*2,
+    "ataque":289,
     "velocidade":50,
     "elemento1":"fogo",
     "nome":"Micheal",
@@ -75,9 +75,9 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
-    "ataque":800,
+    "ataque":380,
     "velocidade":50,
     "elemento1":"natureza",
     "nome":"CCA",
@@ -92,9 +92,9 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
-    "ataque":800,
+    "ataque":400,
     "velocidade":50,
     "elemento1":"agua",
     "nome":"Helena",
@@ -109,9 +109,9 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
-    "ataque":800,
+    "ataque":300,
     "velocidade":50,
     "elemento1":"gelo",
     "nome":"Renato",
@@ -126,9 +126,9 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
-    "ataque":800,
+    "ataque":300,
     "velocidade":50,
     "elemento1":"pedra",
     "nome":"Edna",
@@ -143,9 +143,9 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
-    "ataque":800,
+    "ataque":300,
     "velocidade":50,
     "elemento1":"metal",
     "nome":"Pedro",
@@ -160,9 +160,9 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
-    "ataque":800,
+    "ataque":500,
     "velocidade":50,
     "elemento1":"vento",
     "nome":"Indiano vingativo",
@@ -177,7 +177,7 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
     "ataque":800,
     "velocidade":50,
@@ -194,7 +194,7 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
     "ataque":800,
     "velocidade":50,
@@ -211,7 +211,7 @@ inimigos=[ {
     "nivel":2,
     "agilidade":60,
     "vida":2800,
-    "vidaM":1800,
+    "vidaM":2800,
     "img":"razor.jpg",
     "ataque":800,
     "velocidade":50,
@@ -233,8 +233,14 @@ clock = pygame.time.Clock()
 def maps(level,mundo,inimigos,inimigo):
     
     level_maps=[]
-    if mundo==1:     
+    if mundo==1:
+        
+               
+                
         if level==0:
+            for i in inimigos:
+                i["vida"]=i["vidaM"]
+            
             level_maps = [
                         "2222222223332222222222222",
                         "2222222220002222222222223",
@@ -359,6 +365,7 @@ def maps(level,mundo,inimigos,inimigo):
         
 def levels(mario_x,mario_y,level):
     mario_x=mario_x
+   
     if level==0:
         level=1
         mario_x = 500
@@ -377,6 +384,14 @@ def levels(mario_x,mario_y,level):
         mario_y = 130
     elif level==2 and mario_y<100.5:
         level=3
+        mario_x = 500
+        mario_y = 630
+    elif level==3 and mario_y>630:
+        level=2
+        mario_x = 670
+        mario_y = 130
+    elif level==3 and mario_y<100.5:
+        level=0
         mario_x = 500
         mario_y = 630
     return level,int(mario_x), int(mario_y)
@@ -1360,6 +1375,7 @@ def minigame2(player,inimigo):
         return power       
                 
 def combat(player,inimigo):
+    running=True
     inimigo["img"]=="ini_ini.png"
     while player["vida"]>0 and inimigo["vida"]>0:
         defendido=False
@@ -1388,7 +1404,8 @@ def combat(player,inimigo):
                     texto_luta(player,inimigo,op,critico,1,acu)
                     pygame.time.wait(500)
                     if player["vida"]<0:
-                        texto_luta(player,inimigo,op,critico,3,acu)             
+                        texto_luta(player,inimigo,op,critico,3,acu)   
+                        running=False
                 else:
                     inimigo["vida"]=0
                     texto_luta(player,inimigo,op,critico,2,acu)
@@ -1469,14 +1486,14 @@ def combat(player,inimigo):
                     texto_luta(player,inimigo,op,critico,3,acu)            
     inimigo["ativo"]=False  
     inimigo["x"]=1560           
-    return player,inimigo    
+    return player,inimigo,running    
 
 while running:  
     if world: 
        mario_x,mario_y,running,level,combate,inimigo= moving(mario_x,mario_y, running,level,inimigos)
        if running==True:
            if combate:
-               player,inimigo=combat(player,inimigo)           
+               player,inimigo,running=combat(player,inimigo)           
            else:
                level,mario_x,mario_y=levels(mario_x,mario_y,level)
                level_maps,inimigos=maps(level,mundo,inimigos,inimigo)
