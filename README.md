@@ -5,7 +5,7 @@
 
 ### Objetivo
 
-1. Criar uma adptação do jogo de pokemon com mecanicas de luta semelhantes mas em vez de ser mundo aberto ser um torneio.
+1. Criar uma adptação do jogo de pokemon com mecanicas de luta semelhantes.
 
 
 ### Repositório de código
