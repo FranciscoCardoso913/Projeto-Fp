@@ -17,19 +17,10 @@
 
 *--É um jogo onde um personagem tem que se esquivar de inimigos, ao ir contra inimigos iniciara uma luta do estilo pokemons com algumas mecanicas diferentes.
 
-### UI
-
-![UI](ui.png)
 
 ### Pacotes
 
 - Pygame
 
-### Tarefas
 
-1. carregar os níveis
-1. desenhar a matriz do nível
-1. ler teclas e mover as peças
-2. verificar se jogador chegou ao fim do nível
-
-- Atualizado a última vez em 15/12/2021
+- Atualizado a última vez em 24/01/2022
