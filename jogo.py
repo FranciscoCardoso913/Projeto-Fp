@@ -16,7 +16,7 @@ player={
         "vida":1800,
         "vidaM":1800,
         "img":"vy_0 (2).png",
-        "ataque":1500,
+        "ataque":300,
         "velocidade":60,
         "elemento1":"vento",
         "elemento2":"eletro"
