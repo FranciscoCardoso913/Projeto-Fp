@@ -29,7 +29,7 @@ level=0
 pygame.init()#
 screen = pygame.display.set_mode(SCREEN_SIZE)#
 
-mario_img = pygame.image.load('vy_0.png')#
+mario_img = pygame.image.load('vy_0 (2).png')#
 
 mario_x = 500
 mario_y = 630
