@@ -8,7 +8,10 @@ Created on Sun Dec 26 10:59:51 2021
 import pygame
 import random 
 
-SCREEN_SIZE = (1500, 750)#
+SCREEN_SIZE = (1500, 750)
+
+SPRITES_DIR = 'sprites/'
+
 player={
         "nome":"JCL",#15 max
         "agilidade":60,
@@ -24,12 +27,13 @@ player={
 MARIO_SIZE = 73#
 BLOCK_SIZE = 32#
 
+
 mundo=1
 level=0
 pygame.init()#
 screen = pygame.display.set_mode(SCREEN_SIZE)#
 
-mario_img = pygame.image.load('vy_0 (2).png')#
+mario_img = pygame.image.load( SPRITES_DIR +'vy_0 (2).png')#
 
 mario_x = 500
 mario_y = 630
@@ -402,9 +406,9 @@ def moving(mario_x,mario_y,running,level,inimigos):
     conter2=360
     combate=False
     inimigo=0
-    mario_img = pygame.image.load('vy_0 (2).png')
+    mario_img = pygame.image.load( SPRITES_DIR +'vy_0 (2).png')
     level_maps,inimigos=maps(level,mundo,inimigos,inimigo)
-    bg = pygame.image.load("background.png")
+    bg = pygame.image.load( SPRITES_DIR +"background.png")
     left_key = right_key = up_key=down_key= False
     mario_vx = 0
     mario_vy = 0
@@ -480,82 +484,82 @@ def moving(mario_x,mario_y,running,level,inimigos):
             if mario_vy>0:
                 estado=3
                 if conter<=360 and conter>270:
-                    mario_img = pygame.image.load('vy_1 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_1 (2).png')
                     conter=conter-1
                 elif conter<=270 and conter >180:
-                    mario_img = pygame.image.load('vy_2 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_2 (2).png')
                     conter=conter-1
                 elif conter<=180 and conter>90:
-                    mario_img = pygame.image.load('vy_3 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_3 (2).png')
                     conter=conter-1
                 elif conter<=90 and conter>0:
-                    mario_img = pygame.image.load('vy_4 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_4 (2).png')
                     conter=conter-1
                 elif conter<=0:
                     conter=360         
             elif mario_vy<0:
                 estado=2
                 if conter<=360 and conter>270:
-                    mario_img = pygame.image.load('vy_5(2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_5(2).png')
                     conter=conter-1
                 elif conter<=270 and conter >180:
-                    mario_img = pygame.image.load('vy_6 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_6 (2).png')
                     conter=conter-1
                 elif conter<=180 and conter>90:
-                    mario_img = pygame.image.load('vy_7 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_7 (2).png')
                     conter=conter-1
                 elif conter<=90 and conter>0:
-                    mario_img = pygame.image.load('vy_8 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_8 (2).png')
                     conter=conter-1
                 elif conter<=0:
                     conter=360
             elif mario_vx<0:
                 estado=1
                 if conter<=360 and conter>270:
-                    mario_img = pygame.image.load('vx_5 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_5 (2).png')
                     conter=conter-1
                 elif conter<=270 and conter >180:
-                    mario_img = pygame.image.load('vx_6 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_6 (2).png')
                     conter=conter-1
                 elif conter<=180 and conter>90:
-                    mario_img = pygame.image.load('vx_5 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_5 (2).png')
                     conter=conter-1
                 elif conter<=90 and conter>0:
-                    mario_img = pygame.image.load('vx_7 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_7 (2).png')
                     conter=conter-1
                 elif conter<=0:
                     conter=360
             elif mario_vx>0:
                 estado=0
                 if conter<=360 and conter>270:
-                    mario_img = pygame.image.load('vx_1 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_1 (2).png')
                     conter=conter-1
                 elif conter<=270 and conter >180:
-                    mario_img = pygame.image.load('vx_2 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_2 (2).png')
                     conter=conter-1
                 elif conter<=180 and conter>90:
-                    mario_img = pygame.image.load('vx_1 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_1 (2).png')
                     conter=conter-1
                 elif conter<=90 and conter>0:
-                    mario_img = pygame.image.load('vx_3 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_3 (2).png')
                     conter=conter-1
                 elif conter<=0:
                     conter=360
             if mario_vx==0 and mario_vy==0:
                 if estado==0:
-                    mario_img = pygame.image.load('vx_1 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_1 (2).png')
                 elif estado==1:
-                    mario_img = pygame.image.load('vx_5 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vx_5 (2).png')
                 elif estado==2:
-                    mario_img = pygame.image.load('vy_0 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_0 (2).png')
                 else:
-                    mario_img = pygame.image.load('vy_9 (2).png')
+                    mario_img = pygame.image.load( SPRITES_DIR +'vy_9 (2).png')
             mario_x += mario_vx
             mario_y += mario_vy
             mario_img.set_colorkey((48, 120, 128))
             # x=0
             # y=0
-            # e=pygame.image.load("razor.jpg")
+            # e=pygame.image.load( SPRITES_DIR +"razor.jpg")
             # for a in level_maps:
             #     y=y+1
             #     x=1
@@ -643,7 +647,7 @@ def moving(mario_x,mario_y,running,level,inimigos):
                             conter2=360
                      i["y"]+=vy
                      i["x"]+=vx
-                     enemy=pygame.image.load(i["img"])
+                     enemy=pygame.image.load( SPRITES_DIR +i["img"])
                      enemy.set_colorkey((255, 255, 255))
                      screen.blit(enemy, (i["x"],i["y"])) 
                      condi1=int(mario_y/62.5)==int(i["y"]/62.5)and int(mario_x/62.5)==int(i["x"]/62.5) and i["ativo"]==True
@@ -707,10 +711,10 @@ def menu_inicial(menu,world,running):
    
 def esquema(player,inimigo):
         op=1
-        bg = pygame.image.load("bg.jpg")#
+        bg = pygame.image.load( SPRITES_DIR +"bg.jpg")#
         screen.blit(bg, (0, 0))
-        mario_img = pygame.image.load(player["img"])
-        inimigo_img= pygame.image.load(inimigo["img"])
+        mario_img = pygame.image.load( SPRITES_DIR +player["img"])
+        inimigo_img= pygame.image.load( SPRITES_DIR +inimigo["img"])
         screen.blit(mario_img, (740, 330))
         pygame.font
         screen.blit(inimigo_img, (740, 150))
@@ -1045,10 +1049,10 @@ def barra_de_vida(player,inimigo):
     screen.blit(barra_inimigo, barra_inimigoR)  
     
 def texto_luta(player,inimigo,op,critico,v,acu):
-        bg = pygame.image.load("bg.jpg")
+        bg = pygame.image.load( SPRITES_DIR +"bg.jpg")
         screen.blit(bg, (0, 0))
-        mario_img = pygame.image.load(player["img"])
-        inimigo_img= pygame.image.load(inimigo["img"])
+        mario_img = pygame.image.load( SPRITES_DIR +player["img"])
+        inimigo_img= pygame.image.load( SPRITES_DIR +inimigo["img"])
         screen.blit(mario_img, (740, 330))
         pygame.font
         screen.blit(inimigo_img, (740, 150))
